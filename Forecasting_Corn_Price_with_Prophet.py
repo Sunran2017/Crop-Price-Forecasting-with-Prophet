@@ -16,13 +16,19 @@ df.columns=["ds","y"]
 df.head()
 
 
+#Initializing
+m = Prophet()
+m.fit(df)
+
+#prediction periods#
+future = m.make_future_dataframe(periods=3650*3+14)
+future.tail()
+
 #yearly seasonality, changepoint_prior_scale = 0.8
 m = Prophet(changepoint_prior_scale=0.8,weekly_seasonality=False,daily_seasonality=False)
 m.add_seasonality(name='yearly', period=365, fourier_order=30)
 forecast = m.fit(df).predict(future)
-#prediction periods#
-future = m.make_future_dataframe(periods=3650*3+14)
-future.tail()
+
 
 forecast[["ds","yhat","yhat_lower","yhat_upper"]].tail()
 yhat = forecast[["ds","yhat"]]
