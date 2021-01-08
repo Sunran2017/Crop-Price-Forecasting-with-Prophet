@@ -130,7 +130,7 @@ m.fit(df)
 if term == 34 :
     future = m.make_future_dataframe(periods = 3650 * 3 + 14)
 elif term ==10:
-        future = m.make_future_dataframe(periods = 365 * 10)
+    future = m.make_future_dataframe(periods = 365 * 10)
 elif term == 5:
     future = m.make_future_dataframe(periods = 365 * 5)
 elif term == 3:
@@ -315,31 +315,5 @@ saveFig(name, 2004)
 #save 
 yhat = yhat.set_index("ds")
 saveFcst(name)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
