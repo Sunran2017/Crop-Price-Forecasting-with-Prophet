@@ -54,7 +54,7 @@ elif term == 3:
         
 
 ##yearly seasonality, changepoint_prior_scale = 0.8#
-m = Prophet(changepoint_prior_scale = 0.8,weekly_seasonality = False,daily_seasonality=False)
+m = Prophet(changepoint_prior_scale = 0.8, weekly_seasonality = False, daily_seasonality=False)
 m.add_seasonality(name='yearly', period = 365 * 10, fourier_order = 30)
 
 
